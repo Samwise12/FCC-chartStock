@@ -11,3 +11,7 @@ export const addSeries = (series, newStock) => {
 		});
 	};
 };
+
+export const findStockIndex = (array, fieldName, stock) => (
+	array.findIndex(s => s[fieldName] === stock.code)
+)

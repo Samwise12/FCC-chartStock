@@ -43,7 +43,7 @@ app.get('*', (req, res) => {
 const io = require('socket.io')(server, {
 	path: '/stockchart'
 });
-// require('./socketio')(io);
+require('./socketio')(io);
 
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 

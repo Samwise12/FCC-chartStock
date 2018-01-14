@@ -1,0 +1,98 @@
+body {
+	background-color: black !important;
+}
+.chart-page-root {
+	padding: 0px 30px;
+	background-color: black;
+}
+
+.chart-wrap {
+	position: relative;
+}
+
+.chart-page-stocks {
+	padding: 0px 12px 30px 8px;
+	background-color: black;
+}
+
+.chart-page-root h1, .chart-page-root h3 {
+	padding-top: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	color:white;
+}
+/*////////////////*/
+h2.stock-list-title {
+	margin: 0;
+}
+
+.stock-list {
+	margin: 0 !important;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+/*///////*/
+.ui.divided.list>.item.stock-list-item-wrap {
+	width: 48%;
+	padding: 0 0 10px 0 !important;
+    border-top: none;
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    position: relative;
+    cursor: default;
+    transition: all 0.35s ease-in-out;
+}
+
+.ui.divided.list>.item.stock-list-item-wrap:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.stock-list-item-wrap:hover .stock-list-item-remove {
+    display: flex !important;
+    opacity: 1;
+}
+
+@media all and (max-width: 700px){
+	.ui.divided.list>.item.stock-list-item-wrap {
+		width: 100%;
+	}
+}
+/*///////*/
+i.stock-list-item-remove {
+	width: 58px !important;
+	height: 52px !important;
+	padding: 15px !important;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	font-size: 16px;
+	cursor: pointer;
+	display: none !important;
+	opacity: 0;
+	transition: all 0.35s ease-in-out;
+}
+
+.stock-list-item-wrap:hover .stock-list-item-remove {
+    display: flex !important;
+    opacity: 1;
+    color:red;
+}
+/*/////////*/
+.stock-list-item {
+	font-size: 12px;
+    font-weight: 100;
+    color: red;
+    text-align: center;
+}
+/*/////////*/
+.input-background-black{
+	display: flex;
+	/*background-color: black;*/
+	align-items: center;
+	justify-content: center;
+}
+

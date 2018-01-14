@@ -69,6 +69,16 @@ router.post('/', (req,res)=> { // Add stock
 	// res.status(200).json({})
 });
 
+router.delete('/:id', (req,res)=> {	
+	Stock.findByIdAsync(req.params.id)
+		.then(res=> {
+				res.removeAsync()
+		}
+			).then(response=>
+			res.status(204).end()			
+			).catch(err=> console.log('Error!: ', err));
+});
+
 export default router;
 
 
