@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 8080;
 import data from './routes/data';
 
 // app.use(morgan('dev'));
-// app.use(express.static(path.resolve(__dirname, '../../night-react/build')));
+app.use(express.static(path.resolve(__dirname, '../../stock/build')));
 app.use(bodyParser.json());
 app.use(cors());
 
