@@ -54,7 +54,7 @@ if (process.env.NODE_ENV !== 'production') {
 var PORT = process.env.PORT || 8080;
 
 // app.use(morgan('dev'));
-// app.use(express.static(path.resolve(__dirname, '../../night-react/build')));
+app.use(_express2.default.static(_path2.default.resolve(__dirname, '../../stock/build')));
 app.use(_bodyParser2.default.json());
 app.use((0, _cors2.default)());
 
@@ -70,8 +70,8 @@ _mongoose2.default.connect(dbUrl, { useMongoClient: true }).then(function () {
 app.use('/api/data', _data2.default);
 
 app.get('*', function (req, res) {
-  res.sendFile(_path2.default.join(__dirname, 'index.html'));
-  // res.sendFile(path.resolve(__dirname, '../../night-react/build', 'index.html'));	
+  // res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(_path2.default.resolve(__dirname, '../../stock/build', 'index.html'));
 });
 //-----SOCKET.IO
 var io = require('socket.io')(server, {
