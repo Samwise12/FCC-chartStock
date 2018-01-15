@@ -46,7 +46,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 
 var app = (0, _express2.default)();
-var server = require('http').Server(app);
+//const server = require('http').Server(app);  
+var server = require('http').createServer(app);
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
@@ -79,6 +80,6 @@ var io = require('socket.io')(server, {
 });
 require('./socketio')(io);
 
-server.listen(PORT, function () {
+server.listen(PORT, process.env.IP, function () {
   return console.log('Listening on port ' + PORT);
 });

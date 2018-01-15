@@ -12,7 +12,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 
 const app = express();
-const server = require('http').Server(app);  
+//const server = require('http').Server(app);  
+const server = require('http').createServer(app);  
 
 if (process.env.NODE_ENV !== 'production'){require('dotenv').config()}
 const PORT = process.env.PORT || 8080;
