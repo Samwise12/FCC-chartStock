@@ -36,8 +36,8 @@ mongoose.connect(dbUrl,
 app.use('/api/data', data);
 
 app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname, 'index.html'));
-    // res.sendFile(path.resolve(__dirname, '../../night-react/build', 'index.html'));	
+	// res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../../stock/build', 'index.html'));	
 })
 //-----SOCKET.IO
 const io = require('socket.io')(server, {
