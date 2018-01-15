@@ -15,7 +15,7 @@ Build an app that is functionally similar to this: http://watchstocks.herokuapp.
 *User Story: I can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.
 
 ## Implemented
-#Socket.io, Quandl, Highcharts
+Socket.io, Quandl, Highcharts
 
 ## Pictures
 
