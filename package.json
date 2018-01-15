@@ -1,0 +1,40 @@
+{
+  "name": "stock-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "Samwise12",
+  "engines": {
+    "node": "9.0.0"
+  },  
+  "scripts": {
+    "start": "cd stock-api && npm run serve",
+    "heroku-postbuild": "cd stock/ && yarn --production=false && yarn run build"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-polyfill": "^6.26.0",
+    "bcrypt": "^1.0.3",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "circular-json": "^0.5.1",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "jwt": "^0.2.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.3",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.4",
+    "mongoose-unique-validator": "^1.0.6",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.4.0",
+    "socket.io": "^2.0.4",
+    "yelp-fusion": "^1.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.12.1"
+  }
+}

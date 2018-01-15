@@ -26,7 +26,7 @@ app.use(cors());
 
 // mongoose.Promise = global.Promise *fix mpromise issue without bluebird
 mongoose.Promise = Promise;
-const dbUrl = 'mongodb://localhost:27017/stockchart';
+const dbUrl = process.env.MONGODB_URI || process.env.MONGODB_URL;
 mongoose.connect(dbUrl,
  { useMongoClient: true }).then(
  () => {console.log('mongodb running local mongodb')},

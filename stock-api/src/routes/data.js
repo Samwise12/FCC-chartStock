@@ -22,7 +22,7 @@ router.get('/:code', (req,res)=> {
 	date = now.getDate();
 	axios({
 		method: 'get',
-		url: `https://www.quandl.com/api/v3/datasets/WIKI/${name}.json?api_key=QNL1siP-U1MdnPPd3Wx-&order=asc&start_date=${year - 3}-${month}-${date}&end_date=${year}-${month}-${date}`,
+		url: `https://www.quandl.com/api/v3/datasets/WIKI/${name}.json?api_key=${process.env.API_KEY}&order=asc&start_date=${year - 3}-${month}-${date}&end_date=${year}-${month}-${date}`,
 		responseType: 'json'				
 		})
 	.then(response => {
@@ -46,7 +46,7 @@ router.post('/', (req,res)=> { // Add stock
 	};	
 	axios({
 		method: 'get',
-		url: `https://www.quandl.com/api/v3/datasets/WIKI/${name.toUpperCase()}.json?api_key=QNL1siP-U1MdnPPd3Wx-&order=asc&start_date=${year - 3}-${month}-${date}&end_date=${year}-${month}-${date}`,
+		url: `https://www.quandl.com/api/v3/datasets/WIKI/${name.toUpperCase()}.json?api_key=${process.env.API_KEY}&order=asc&start_date=${year - 3}-${month}-${date}&end_date=${year}-${month}-${date}`,
 		responseType: 'json'				
 		}).then(response=> {
 			Stock.findAsync({code: response.data.dataset.dataset_code})
