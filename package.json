@@ -5,7 +5,7 @@
   "license": "Samwise12",
   "engines": {
     "node": "9.0.0"
-  },  
+  },
   "scripts": {
     "start": "cd stock-api && npm run serve",
     "heroku-postbuild": "cd stock/ && yarn --production=false && yarn run build"
@@ -21,7 +21,6 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.0",
-    "jwt": "^0.2.0",
     "lodash": "^4.17.4",
     "moment": "^2.19.3",
     "mongodb": "^2.2.33",
