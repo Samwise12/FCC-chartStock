@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "Samwise12",
-  "engines": {
-    "node": "9.11.2"
-  },
   "scripts": {
     "start": "cd stock-api && npm run serve",
     "heroku-postbuild": "cd stock/ && yarn --production=false && yarn run build"    
