@@ -32,6 +32,7 @@ router.get('/', function (req, res) {
 });
 
 router.get('/:code', function (req, res) {
+	console.log("A");
 	// console.log(req.params.code)
 	var name = req.params.code,
 	    now = new Date(),
@@ -40,11 +41,11 @@ router.get('/:code', function (req, res) {
 	    date = now.getDate();
 	(0, _axios2.default)({
 		method: 'get',
-		url: 'https://www.quandl.com/api/v3/datasets/WIKI/' + name + '.json?api_key=' + process.env.API_KEY + '&order=asc&start_date=' + (year - 3) + '-' + month + '-' + date + '&end_date=' + year + '-' + month + '-' + date,
+		url: 'https://www.quandl.com/api/v3/datasets/WIKI/' + name + '.json?api_key=' + process.env.API_KEY + '&order=asc&start_date=' + (year - 7) + '-' + month + '-' + date + '&end_date=' + (year - 5) + '-' + month + '-' + date,
 		responseType: 'json'
 	}).then(function (response) {
 		var x = _circularJson2.default.stringify(response);
-		// console.log(response);
+		// console.log("Response",response);
 		res.status(200).json({ data: x }).end();
 	}).catch(function (err) {
 		return console.log(err);
@@ -54,6 +55,7 @@ router.get('/:code', function (req, res) {
 router.post('/', function (req, res) {
 	// Add stock
 	// console.log(req.body.stockName)
+	console.log("B");
 	var name = req.body.stockName,
 	    now = new Date(),
 	    year = now.getFullYear(),
@@ -65,9 +67,10 @@ router.post('/', function (req, res) {
 	};
 	(0, _axios2.default)({
 		method: 'get',
-		url: 'https://www.quandl.com/api/v3/datasets/WIKI/' + name.toUpperCase() + '.json?api_key=' + process.env.API_KEY + '&order=asc&start_date=' + (year - 3) + '-' + month + '-' + date + '&end_date=' + year + '-' + month + '-' + date,
+		url: 'https://www.quandl.com/api/v3/datasets/WIKI/' + name.toUpperCase() + '.json?api_key=' + process.env.API_KEY + '&order=asc&start_date=' + (year - 7) + '-' + month + '-' + date + '&end_date=' + (year - 5) + '-' + month + '-' + date,
 		responseType: 'json'
 	}).then(function (response) {
+		// console.log("response",response.data);
 		_Model2.default.findAsync({ code: response.data.dataset.dataset_code }).then(function (stock) {
 			if (stock.length) {
 				res.json({ err: 'Stock already displayed.' });
@@ -93,7 +96,7 @@ router.delete('/:id', function (req, res) {
 	}).then(function (response) {
 		return res.status(204).end();
 	}).catch(function (err) {
-		return console.log('Error!: ', err);
+		return console.log('Error!zzz: ', err);
 	});
 });
 

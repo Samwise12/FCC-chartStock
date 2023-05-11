@@ -14,20 +14,21 @@ router.get('/', (req, res)=> {
 });
 
 router.get('/:code', (req,res)=> {
+	console.log("A");
 	// console.log(req.params.code)
 	let name = req.params.code,
 	now = new Date(),
 	year = now.getFullYear(),
 	month = now.getMonth() + 1,
-	date = now.getDate();
+	date = now.getDate();	
 	axios({
 		method: 'get',
-		url: `https://www.quandl.com/api/v3/datasets/WIKI/${name}.json?api_key=${process.env.API_KEY}&order=asc&start_date=${year - 3}-${month}-${date}&end_date=${year}-${month}-${date}`,
+		url: `https://www.quandl.com/api/v3/datasets/WIKI/${name}.json?api_key=${process.env.API_KEY}&order=asc&start_date=${year - 7}-${month}-${date}&end_date=${year-5}-${month}-${date}`,
 		responseType: 'json'				
 		})
 	.then(response => {
 		let x = CircularJSON.stringify(response);
-		// console.log(response);
+		// console.log("Response",response);
 		res.status(200).json({data: x}).end();
 	})
 	.catch(err => console.log(err));	
@@ -35,6 +36,7 @@ router.get('/:code', (req,res)=> {
 
 router.post('/', (req,res)=> { // Add stock
 	// console.log(req.body.stockName)
+	console.log("B");
 	let name = req.body.stockName,
 	now = new Date(),
 	year = now.getFullYear(),
@@ -46,9 +48,10 @@ router.post('/', (req,res)=> { // Add stock
 	};	
 	axios({
 		method: 'get',
-		url: `https://www.quandl.com/api/v3/datasets/WIKI/${name.toUpperCase()}.json?api_key=${process.env.API_KEY}&order=asc&start_date=${year - 3}-${month}-${date}&end_date=${year}-${month}-${date}`,
+		url: `https://www.quandl.com/api/v3/datasets/WIKI/${name.toUpperCase()}.json?api_key=${process.env.API_KEY}&order=asc&start_date=${year - 7}-${month}-${date}&end_date=${year-5}-${month}-${date}`,
 		responseType: 'json'				
 		}).then(response=> {
+			// console.log("response",response.data);
 			Stock.findAsync({code: response.data.dataset.dataset_code})
 				.then(stock=> {
 					if(stock.length) {
@@ -76,7 +79,7 @@ router.delete('/:id', (req,res)=> {
 		}
 			).then(response=>
 			res.status(204).end()			
-			).catch(err=> console.log('Error!: ', err));
+			).catch(err=> console.log('Error!zzz: ', err));
 });
 
 export default router;

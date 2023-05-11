@@ -61,11 +61,12 @@ app.use((0, _cors2.default)());
 
 // mongoose.Promise = global.Promise *fix mpromise issue without bluebird
 _mongoose2.default.Promise = _bluebird2.default;
+_mongoose2.default.set('strictQuery', true);
 var dbUrl = process.env.MONGODB_URI || process.env.MONGODB_URL;
-_mongoose2.default.connect(dbUrl, { useMongoClient: true }).then(function () {
+_mongoose2.default.connect(dbUrl).then(function () {
   console.log('mongodb running local mongodb');
 }, function (err) {
-  console.log('error!:', err);
+  console.log('error!zz:', err);
 });
 
 app.use('/api/data', _data2.default);

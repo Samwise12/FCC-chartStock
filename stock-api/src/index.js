@@ -27,11 +27,11 @@ app.use(cors());
 
 // mongoose.Promise = global.Promise *fix mpromise issue without bluebird
 mongoose.Promise = Promise;
+mongoose.set('strictQuery', true);
 const dbUrl = process.env.MONGODB_URI || process.env.MONGODB_URL;
-mongoose.connect(dbUrl,
- { useMongoClient: true }).then(
+mongoose.connect(dbUrl).then(
  () => {console.log('mongodb running local mongodb')},
- err => {console.log('error!:', err)}
+ err => {console.log('error!zz:', err)}
  );
 
 app.use('/api/data', data);

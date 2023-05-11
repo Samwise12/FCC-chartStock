@@ -36,6 +36,7 @@ class App extends Component {
             // console.log(results);
           let x= CircularJSON.parse(results.data.data);
           let stockData = x.data;
+          console.log(stockData);
           addSeries(series, stockData)
           this.setState({series, loading: false });        
         });
@@ -62,6 +63,8 @@ class App extends Component {
         .then(results=> {
           results.forEach(response=> {
           let x= CircularJSON.parse(response.data.data);
+          // console.log("response",response.data.data);
+          console.log("response2",JSON.parse(response.data.data));
           let stockData = x.data;
           addSeries(series, stockData)
           this.setState({series, loading: false });
