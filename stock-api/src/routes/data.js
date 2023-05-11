@@ -14,7 +14,7 @@ router.get('/', (req, res)=> {
 });
 
 router.get('/:code', (req,res)=> {
-	console.log("A");
+	// console.log("A");
 	// console.log(req.params.code)
 	let name = req.params.code,
 	now = new Date(),
