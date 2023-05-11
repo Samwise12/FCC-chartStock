@@ -135,7 +135,7 @@ class App extends Component {
         </Form>
         {
           <div className="chart-page-stocks">
-          <h1>Stock List</h1>
+          <h1>Stock List3</h1>
           <List divided inverted relaxed className="stock-list">
             { this.displayStocks() }
           </List>

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "Samwise12",
   "engines": {
-    "node": "9.0.0"
+    "node": "9.11.2"
   },
   "scripts": {
     "start": "cd stock-api && npm run serve",

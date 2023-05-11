@@ -32,7 +32,7 @@ router.get('/', function (req, res) {
 });
 
 router.get('/:code', function (req, res) {
-	console.log("A");
+	// console.log("A");
 	// console.log(req.params.code)
 	var name = req.params.code,
 	    now = new Date(),
