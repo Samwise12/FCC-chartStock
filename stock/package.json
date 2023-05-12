@@ -2,6 +2,9 @@
   "name": "stock",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "circular-json": "^0.5.1",
